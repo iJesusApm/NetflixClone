@@ -1,5 +1,4 @@
 export const SCREENS_ROUTES = {
-    LOGIN: 'LOGIN',
-    HOME: 'HOME',
-  };
-  
+  LOGIN: 'LOGIN',
+  HOME: 'HOME',
+}

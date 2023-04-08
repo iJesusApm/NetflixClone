@@ -1,6 +1,6 @@
-import { StatusBar } from "expo-status-bar";
+import React, {StatusBar} from 'expo-status-bar'
 
-import Navigator from "./navigation/navigator/Root";
+import Navigator from './navigation/navigator/Root'
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
       <Navigator />
       <StatusBar style="auto" />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
