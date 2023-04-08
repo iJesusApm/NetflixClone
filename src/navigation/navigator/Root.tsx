@@ -19,8 +19,8 @@ const Navigator = () => {
           headerTitleAlign: 'center',
           animation: 'slide_from_right',
         }}>
-        <Stack.Screen name={SCREENS_ROUTES.HOME} component={HomeScreen} options={{headerShown: false}} />
         <Stack.Screen name={SCREENS_ROUTES.LOGIN} component={AuthScreen} options={{headerShown: false}} />
+        <Stack.Screen name={SCREENS_ROUTES.HOME} component={HomeScreen} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   )
