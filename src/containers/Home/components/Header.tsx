@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Image, StyleSheet, TouchableOpacity} from 'react-native'
+import {View, Image, StyleSheet, TouchableOpacity, Platform} from 'react-native'
 import {Ionicons} from '@expo/vector-icons'
 import {COLORS} from '../../../styles/colors'
 import {useNavigation} from '@react-navigation/native'
@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 10,
+    marginTop: Platform.OS === 'android' ? 40 : 0,
   },
   logo: {
     width: 40,

@@ -16,7 +16,7 @@ const Category = ({category}: Props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getMovies(category.id, 3)
+        const data = await getMovies(category.id, 5)
         setMovies(data.titles)
       } catch (error) {
         console.error(error)
