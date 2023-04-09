@@ -1,17 +1,29 @@
 import React from 'react'
 import {View, Image, StyleSheet, TouchableOpacity} from 'react-native'
+import {Ionicons} from '@expo/vector-icons'
+import {COLORS} from '../../../styles/colors'
+import {useNavigation} from '@react-navigation/native'
+import {SCREENS_ROUTES} from '../../../navigation/constans'
 
 const Header = () => {
+  const navigation = useNavigation()
+  const handleLogout = () => {
+    navigation.navigate(SCREENS_ROUTES.LOGIN)
+  }
+
   return (
     <View style={styles.container}>
       <Image source={require('../../../assets/resources/logo-short.png')} style={styles.logo} resizeMode="contain" />
-      <TouchableOpacity style={styles.profile}>
-        <Image
-          source={require('../../../assets/resources/profile-image.png')}
-          style={styles.profileImage}
-          resizeMode="cover"
-        />
-      </TouchableOpacity>
+      <View style={styles.options}>
+        <Ionicons name="search-outline" size={24} color={COLORS.WHITE} />
+        <TouchableOpacity style={styles.profile} onPress={handleLogout}>
+          <Image
+            source={require('../../../assets/resources/profile-image.png')}
+            style={styles.profileImage}
+            resizeMode="cover"
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
@@ -35,7 +47,11 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 5,
-    marginRight: 10,
+    marginHorizontal: 10,
+  },
+  options: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 })
 
