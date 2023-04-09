@@ -1,17 +1,24 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {View, Image, StyleSheet, TouchableOpacity, Text} from 'react-native'
 import {COLORS} from '../../../styles/colors'
 import {Icon} from 'react-native-elements'
+import {getMovies, getUniqueMovie} from '../../../services/movies'
 
-type TopSectionProps = {
-  featuredPoster: string
-}
+const FeaturedMovie = () => {
+  const [poster, setPoster] = useState()
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getMovies('', 1)
+        const movie = await getUniqueMovie(data.titles[0].id)
+        setPoster(movie.poster)
+      } catch (error) {
+        console.error(error)
+      }
+    }
 
-type FeaturedMovieProps = {
-  poster: string
-}
-
-const FeaturedMovie = ({poster}: FeaturedMovieProps) => {
+    fetchData()
+  }, [])
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -44,10 +51,10 @@ const Options = () => {
   )
 }
 
-const TopSection = ({featuredPoster}: TopSectionProps) => {
+const TopSection = () => {
   return (
     <>
-      <FeaturedMovie poster={featuredPoster} />
+      <FeaturedMovie />
       <Options />
     </>
   )

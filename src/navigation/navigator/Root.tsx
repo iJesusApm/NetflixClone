@@ -13,7 +13,7 @@ const Navigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={SCREENS_ROUTES.HOME}
+        initialRouteName={SCREENS_ROUTES.LOGIN}
         screenOptions={{
           headerBackTitleVisible: false,
           headerTitleAlign: 'center',

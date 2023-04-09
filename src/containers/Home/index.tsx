@@ -13,9 +13,7 @@ const Home = () => {
       <View style={styles.list}>
         <FlatList
           data={categories}
-          ListHeaderComponent={
-            <TopSection featuredPoster={'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/netflix/movie1.jpg'} />
-          }
+          ListHeaderComponent={<TopSection />}
           renderItem={({item}) => <Category category={item} />}
         />
       </View>
